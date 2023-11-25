@@ -1,0 +1,32 @@
+body{
+    background-color: #eee;
+}
+
+.reg-form{
+    background-color: #bfedd8;
+    padding: 30px;
+
+    
+}
+
+/* .reg-submit{
+    background-color: #eee;
+    color: black;
+    
+} */
+
+.reg-submit:hover{
+    background-color: #b72332;
+    color: white;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+}
+
+@media(max-width:768px){
+    .input-group label , .input-group input {
+        width: 100%;
+    }
+}
