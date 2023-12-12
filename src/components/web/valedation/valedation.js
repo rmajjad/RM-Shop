@@ -4,3 +4,33 @@ export const regesterSchema = yup.object({
     email:yup.string().required('email is required').email(),
     password:yup.string().required('password is required').min(3,'at least 3 char').max(30,'max is 30 char')
 })
+
+export const loginSchema = yup.object({
+    email:yup.string().required('email is required').email(),
+    password:yup.string().required('password is required').min(3,'at least 3 char').max(30,'max is 30 char')
+})
+
+export const resetPasswordSchema = yup.object({
+    email:yup.string().required('email is required').email(),
+})
+
+export const resetForggetenPasswordSchema = yup.object({
+    email:yup.string().required('email is required').email(),
+    password:yup.string().required('password is required').min(3,'at least 3 char').max(30,'max is 30 char'),
+    code:yup.string().required('code is required').min(4,'only 4 characters').max(4,'only 4 characters')
+})
+
+
+   // const validate = values => {
+    //     let errors = {};
+    //     if (!values.userName) {
+    //         errors.userName = 'user name is required';
+    //     }
+    //     if (!values.email) {
+    //         errors.email = 'email is required';
+    //     }
+    //     if (!values.password) {
+    //         errors.password = 'password is required';
+    //     }
+    //     return errors;
+    // }

@@ -19,7 +19,6 @@ export default function Regestor() {
 
 
     const handelFieldChange = (event) => {
-        //console.log(event);
         formik.setFieldValue('image', event.target.files[0]);
     };
 
@@ -45,7 +44,6 @@ export default function Regestor() {
             theme: "dark",
             });
         }
-        console.log(data);
     }
     // const validate = values => {
     //     let errors = {};
@@ -58,7 +56,6 @@ export default function Regestor() {
     //     if (!values.password) {
     //         errors.password = 'password is required';
     //     }
-    //     //console.log(errors);
     //     return errors;
     // }
 

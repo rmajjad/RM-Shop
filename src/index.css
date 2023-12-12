@@ -1,5 +1,5 @@
 body{
-    background-color: #eee;
+    background-color: #fff;
 }
 
 .reg-form{
@@ -24,6 +24,11 @@ body{
     -ms-transition: .5s;
     -o-transition: .5s;
 }
+
+.nav-link{
+    left: 30%;
+}
+
 
 @media(max-width:768px){
     .input-group label , .input-group input {

@@ -6,18 +6,30 @@ import Layout from "./Layout.jsx";
 import HomeDashboard from "./../components/dashboard/home/Home.jsx";
 import CategoriesDashboard from "./../components/dashboard/categories/Categories.jsx";
 import Regestor from "../components/web/regestor/Regestor.jsx";
+import Login from "../components/web/login/Login.jsx";
+import Cart from "../components/web/cart/Cart.jsx";
+import CategorieaDetails from "../components/web/categories/CategoriesDetails.jsx";
+import Product from "../components/web/products/Product.jsx";
+import ProtectedRoute from "../components/web/protectedRoute/ProtectedRoute.jsx";
+import Profile from "../components/web/profile/Profile.jsx";
+import SendCode from "../components/web/login/SendCode.jsx";
+import ForgetPassword from "../components/web/login/ForgetPassword.jsx";
 
-export const router = createBrowserRouter([
+export const router = createBrowserRouter([ 
     {
         path: '/',
-        element: <Layout />,
+        element: <Layout /*user={user} setUser={setUser}*/ />,
         children: [
             {
-                path:'regestor',
-                element:<Regestor/>
+                path: 'regestor',
+                element: <Regestor />
             },
             {
-                path: 'home',
+                path: 'login',
+                element:<Login />
+            },
+            {
+                index: true,
                 element: <Home />
             },
             {
@@ -25,29 +37,54 @@ export const router = createBrowserRouter([
                 element: <Categories />
             },
             {
+                path: 'cart',
+                element: <ProtectedRoute>
+                    <Cart />
+                </ProtectedRoute>
+            },
+            {
+                path: 'profile',
+                element: <Profile />
+            },
+            {
+                path: 'products/category/:categoryId',
+                element: <CategorieaDetails />
+            },
+            {
+                path: 'sendCode',
+                element: <SendCode />
+            },
+            {
+                path: 'forgetPassword',
+                element: <ForgetPassword />
+            },
+            {
+                path: 'product/:productId',
+                element: <Product />
+            },
+            {
                 path: '*',
-                element: <h2>page not found - web</h2>
+                element: <h2>page not found --- web</h2>
             }
-
         ]
     },
     {
         path: '/dashboard',
         element: <DashboardLayout />,
-        children: [
-            {
-                path: 'home',
-                element: <HomeDashboard />
-            },
-            {
-                path: 'categories',
-                element: <CategoriesDashboard />
-            },
-            {
-                path: '*',
-                element: <h2>page not found-dashboard</h2>
-            }
-
+        children: [{
+            path: 'home',
+            element: <HomeDashboard />
+        }
+            , {
+            path: 'categories',
+            element: <CategoriesDashboard />
+        },
+        {
+            path: '*',
+            element: <h2>page not found --- dashboard</h2>
+        }
         ]
+
+
     }
 ]);
