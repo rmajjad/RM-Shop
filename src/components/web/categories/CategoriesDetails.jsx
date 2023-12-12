@@ -24,9 +24,9 @@ export default function CategorieaDetails() {
     return (
         <div className='products'>
             {data.length ? data.map((product)=>
-                <div className='product' key={product._id}>
+                <div className='product d-flex flex-column align-items-center' key={product._id}>
                     <img src={product.mainImage.secure_url  } />
-                    <h2>{product.name}</h2>
+                    <h2 className='fs-5'>{product.name}</h2>
                     <Link to={`/product/${product._id}`}>details</Link>
                 </div>
             ):<h2>no product found</h2>}
