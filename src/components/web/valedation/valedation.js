@@ -20,6 +20,11 @@ export const resetForggetenPasswordSchema = yup.object({
     code:yup.string().required('code is required').min(4,'only 4 characters').max(4,'only 4 characters')
 })
 
+export const orderSchema = yup.object({
+    address:yup.string().required('address is required'),
+    phone:yup.string().required('phone is required')
+})
+
 
    // const validate = values => {
     //     let errors = {};

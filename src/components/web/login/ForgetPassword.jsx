@@ -69,7 +69,7 @@ export default function ForgetPassword() {
         },
         {
             id: 'code',
-            type: 'code',
+            type: 'text',
             name: 'code',
             title: 'code',
             value: formik.values.code,

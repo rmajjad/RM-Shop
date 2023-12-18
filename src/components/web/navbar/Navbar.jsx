@@ -44,7 +44,7 @@ export default function Navbar() {
               </li>
 
               {userToken ? <li className="nav-item">
-                <Link className="nav-link" to={'/cart'}>cart {counts}</Link>
+                <Link className="nav-link" to={'/cart'}>cart <span className='badge  bg-success'> {counts}</span> </Link>
               </li> : null
               }
             </ul>

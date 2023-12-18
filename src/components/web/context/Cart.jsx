@@ -28,6 +28,7 @@ export function CartContextProvider({children}){
                     theme: "dark",
                     });
             }
+            setCounts(++counts);
             return data;
         }catch(error){
             return error; 
@@ -58,15 +59,66 @@ export function CartContextProvider({children}){
             const {data} = await axios.patch(`${import.meta.env.VITE_API_URL}/cart/removeItem`,{productId},
             {headers:{Authorization:`Tariq__${token}`}}
             );
+            setCounts(--counts);
             return data;
-            
         }catch(error){
             return error; 
         }
         
     }
+    const removeAllItemsContext = async ()=>{
+        try{
+            const token = localStorage.getItem("userToken");console.log(token);
+            const {data} = await axios.patch(`${import.meta.env.VITE_API_URL}/cart/clear`,{},
+            {headers:{Authorization:`Tariq__${token}`}});
+            return data;
 
-    return <CartContext.Provider value={{addToCartContext,getCartContext,removeItemContext,counts,setCounts}}>  
+    }catch(error){  
+        return error;
+    }
+}
+
+    const increaseQuantityContext = async(productId)=>{
+        try{
+            const token = localStorage.getItem("userToken");console.log(token);
+            const {data} = await axios.patch(`${import.meta.env.VITE_API_URL}/cart/incraseQuantity`,{productId},
+            {headers:{Authorization:`Tariq__${token}`}}
+            );
+            setCounts(++counts);
+            return data;
+        }catch(error){
+            return error;
+        }
+    }
+
+    const decreaseQuantityContext = async(productId)=>{
+        try{
+            const token = localStorage.getItem("userToken");
+            const {data} = await axios.patch(`${import.meta.env.VITE_API_URL}/cart/decraseQuantity`,{productId},
+            {headers:{Authorization:`Tariq__${token}`}}
+            );
+            setCounts(--counts);
+            return data;
+        }catch(error){
+            return error;
+        }
+    }
+
+    const getOrderContext = async()=>{
+        try{
+            const token = localStorage.getItem("userToken");
+            console.log(token);
+            const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/order`,
+            {headers:{Authorization:`Tariq__${token}`}}
+            );
+            return data;
+        }catch(error){
+            return error;
+        }
+    }
+
+
+    return <CartContext.Provider value={{addToCartContext,getCartContext,removeItemContext,counts,setCounts,removeAllItemsContext,increaseQuantityContext,decreaseQuantityContext,getOrderContext}}>  
         {children}
     </CartContext.Provider>; 
 }

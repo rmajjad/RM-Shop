@@ -61,7 +61,26 @@ body{
     min-width: 240px;
 }
 
-
+.createANDclear{
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+}
+.clearBtn{
+    width: 10%;
+    
+}
+.clearBtn:hover{
+    color: rgb(25, 135, 84) !important;
+    background-color: #fff  !important;
+    border: 3px solid  rgb(25, 135, 84) !important  ;
+    
+    transition: .7s;
+    -webkit-transition: .7s;
+    -moz-transition: .7s;
+    -ms-transition: .7s;
+    -o-transition: .7s;
+}
 
 
 .product-item {

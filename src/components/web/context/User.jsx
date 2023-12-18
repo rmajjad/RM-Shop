@@ -9,7 +9,7 @@ export let UserContext = createContext();
 export default function UserContextProvider({children}){
     let [userToken, setUserToken] = useState(null);
     let [userData, setUserData] = useState(null);
-
+    let [loading, setLoading] = useState(true);
 
 
     const getUserData = async()=>{
@@ -17,6 +17,7 @@ export default function UserContextProvider({children}){
             const {data} = await axios.get(`${import.meta.env.VITE_API_URL}/user/profile`,
             {headers:{Authorization:`Tariq__${userToken}`}});
             setUserData(data.user); 
+            setLoading(false);
         }
     }
 
@@ -25,7 +26,7 @@ export default function UserContextProvider({children}){
     },[userToken]);
 
 
-    return <UserContext.Provider value={{userToken,setUserToken ,userData,setUserData}}>
+    return <UserContext.Provider value={{userToken,setUserToken ,userData,setUserData,loading}}>
         {children}
     </UserContext.Provider>
 }
