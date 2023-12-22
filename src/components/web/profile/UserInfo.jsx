@@ -11,7 +11,7 @@ export default function UserInfo() {
     return (
         <div className={`${style.info}`}>
             <img src={userData.image.secure_url} className='rounded-circle' />
-            <h2 className='fs-1'>{userData.userName}</h2>
+            <h2 className='fs-1 text-white'>{userData.userName}</h2>
         </div>
     )
 }

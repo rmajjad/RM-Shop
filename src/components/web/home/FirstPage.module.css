@@ -1,0 +1,44 @@
+.homePage{
+    background-color: #9af1bd;
+    height: 100vh;
+    position: relative;
+}
+
+.pageOne{
+    position: absolute;
+    top: 45%;
+    left: 35%;
+}
+
+.homePage h1{
+    color: #fff;
+    
+}
+
+.homePage p {
+    width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: typing 3s infinite alternate-reverse steps(27) both, blink infinite 1.4s;
+    -webkit-animation: typing 3s infinite alternate-reverse steps(27) both, blink infinite 1.4s;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+
+    to {
+        width: 314px;
+    }
+}
+
+@keyframes blink {
+    from {
+        border-color: #fff;
+    }
+
+    to {
+        border-color: #fff;
+    }
+}

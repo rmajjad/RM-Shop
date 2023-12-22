@@ -25,6 +25,10 @@ export const orderSchema = yup.object({
     phone:yup.string().required('phone is required')
 })
 
+export const reatingOrderSchema = yup.object({
+    comment:yup.string().required('comment is required'),
+    rating:yup.string().required('rating is required')
+})
 
    // const validate = values => {
     //     let errors = {};

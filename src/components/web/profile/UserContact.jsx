@@ -11,8 +11,8 @@ export default function UserContact() {
 
     return (
         <div>
-            <h2><i>User Contact:</i></h2>
-            <p className='fs-3'>Email: <a href='https://mail.google.com/' className='text-success text-decoration-none'>{userData.email}</a> </p>
+            <h2 className='text-white'><i>User Contact:</i></h2>
+            <p className='fs-3 text-white'>Email: <a href='https://mail.google.com/' className='text-success text-decoration-none'>{userData.email}</a> </p>
         </div>
     )
 }

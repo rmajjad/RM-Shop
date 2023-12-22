@@ -18,6 +18,9 @@ import UserInfo from "../components/web/profile/UserInfo.jsx";
 import UserContact from "../components/web/profile/UserContact.jsx";
 import Order from "../components/web/order/Order.jsx";
 import GetOrder from "../components/web/order/GetOrder.jsx";
+import Products from "../components/web/products/Products.jsx";
+import Review from "../components/web/products/Review.jsx";
+import FirstPage from "../components/web/home/FirstPage.jsx";
 
 export const router = createBrowserRouter([ 
     {
@@ -35,6 +38,10 @@ export const router = createBrowserRouter([
             {
                 index: true,
                 element: <Home />
+            },
+            {
+                path: '/',
+                element: <FirstPage />
             },
             {
                 path: 'categories',
@@ -77,6 +84,10 @@ export const router = createBrowserRouter([
                 element: <CategorieaDetails />
             },
             {
+                path: 'products',
+                element: <Products />
+            },
+            {
                 path: 'sendCode',
                 element: <SendCode />
             },
@@ -87,6 +98,10 @@ export const router = createBrowserRouter([
             {
                 path: 'product/:productId',
                 element: <Product />
+            },
+            {
+                path: 'product/:productId/review',
+                element: <Review />
             },
             {
                 path: '*',
