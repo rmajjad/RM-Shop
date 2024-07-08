@@ -67,9 +67,6 @@ export default function Navbar() {
                       <li><Link className="dropdown-item" onClick={logout}>logout</Link></li>
                     </>
                   }
-
-
-
                 </ul>
               </li>
             </ul>

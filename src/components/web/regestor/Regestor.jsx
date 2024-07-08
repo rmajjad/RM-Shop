@@ -110,7 +110,7 @@ export default function Regestor() {
             onBlur={formik.handleBlur}
             onChange={input.onChange || formik.handleChange}
         />
-    )
+    ) 
 
     return (
         <div className='container d-flex align-items-center flex-column mt-5'>

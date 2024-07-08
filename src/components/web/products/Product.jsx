@@ -55,8 +55,6 @@ export default function Product() {
                     <p>${data.price}</p>
                     <p><b>Short Discription about your lovely product 😊: </b>{data.description}</p>
                     <button className='btn btn-outline-success' onClick={()=>addToCart(data._id)}>Add to Cart</button>
-                    
-                    
                 </div>
                 
             </div>

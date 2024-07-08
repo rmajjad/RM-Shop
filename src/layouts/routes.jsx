@@ -62,7 +62,7 @@ export const router = createBrowserRouter([
                 path: 'profile',
                 element: 
                 <ProtectedRoute>
-                    <Profile />
+                    <Profile />    
                 </ProtectedRoute>,
                 children:[
                     {

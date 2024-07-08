@@ -41,7 +41,6 @@ export default function Products() {
             for (let haveRate = 0; haveRate < avgerge; haveRate++) {
             stars.push(<FaStar color="gold" />);
             }
-            
             return stars;
         };
 
@@ -79,14 +78,14 @@ export default function Products() {
                 <button
                     className="page-link text-success"
                     onClick={() => getPage(--page)}
-                    disabled={page === 1}
+                    disabled={page == 1}
                 >
                     Previous
                 </button>
                 </li>
 
 
-                    {Array.from({ length: product.total / product.page }).map((_, index) => (
+                    {Array.from({ length: product.total / product.page }).map((product, index) => (
                         <li className="page-item" key={index}>
                             <button
                                 className="page-link text-success"
@@ -103,7 +102,7 @@ export default function Products() {
                         <button
                             className="page-link text-success"
                             onClick={() => getPage(++page)}
-                            disabled={page === product.total / product.page}
+                            disabled={page == product.total / product.page}
                         >
                             Next
                         </button>

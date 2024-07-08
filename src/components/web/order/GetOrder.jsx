@@ -32,6 +32,7 @@ export default function GetOrder() {
                                     <th scope="col">Copun Name</th>
                                     <th scope="col">Phone Number</th>
                                     <th scope="col">payment Type</th>
+                                    <th scope="col">Price</th>
                                     <th scope="col">Stutas</th>
                                 </tr>
                             </thead>
@@ -42,6 +43,7 @@ export default function GetOrder() {
                                     <td>{order.couponName}</td>
                                     <td>{order.phoneNumber}</td>
                                     <td>{order.paymentType}</td>
+                                    <td>{order.finalPrice}</td>
                                     <td>{order.status}</td>
                                 </tr>
                             </tbody>

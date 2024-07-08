@@ -25,7 +25,7 @@ export default function CategorieaDetails() {
         <div className='container p-5'>
         <div className=' row'>
             {data.length ? data.map((product) => 
-            <div className=" col-md-4 text-center ">
+            <div className=" col-md-4 text-center">
                     <img src={product.mainImage.secure_url} className="pb-3" />
                     <p>{product.name}</p>
                     <Link to={`/product/${product._id}`} className={`text-decoration-none text-success`}>Details</Link>
